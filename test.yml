@@ -1,0 +1,37 @@
+# espanso match file
+
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+
+# You can use this file to define the base matches (aka snippets)
+# that will be available in every application when using espanso.
+
+# Matches are substitution rules: when you type the "trigger" string
+# it gets replaced by the "replace" string.
+matches:
+  # Simple text replacement
+  - trigger: ":testtesttest"
+    replace: "If payment was sent after you had already cancelled your server, it sounds as though you may have forgotten to cancel your automatic payments in PayPal. We send an email reminder upon cancellation to do this.\n\nPlease check the following guide on how to cancel your automatic payment"
+  - trigger: ":checking"
+    replace: "Thank you, please give me a moment to check this for you."
+  - trigger: ":example"
+    form: |
+      Hey [[choices]],
+      [[text]]
+      Happy Birthday!
+    form_fields:
+      choices:
+        type: choice
+        values: |
+          First choice
+          Second choice
+      form_fields:
+      text:
+        multiline: true
+
+  
+    
+  # NOTE: espanso uses YAML to define matches, so pay attention to the indentation!
+
+  # But matches can also be dynamic:
+
+  # And much more! For more information, visit the docs: https://espanso.org/docs/
